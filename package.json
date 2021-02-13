@@ -1,0 +1,23 @@
+{
+  "name": "flashcards-app",
+  "version": "1.0.0",
+  "description": "Flashcards web app for SDMM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Software-Development-Mastermind/sdmm-flashcards.git"
+  },
+  "keywords": [
+    "flashcards",
+    "sdmm"
+  ],
+  "author": "Software Development Mastery, Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Software-Development-Mastermind/sdmm-flashcards/issues"
+  },
+  "homepage": "https://github.com/Software-Development-Mastermind/sdmm-flashcards#readme"
+}

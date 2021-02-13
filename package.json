@@ -4,7 +4,8 @@
   "description": "Flashcards web app for SDMM",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"nodemon server.js\" \"npm run watch --prefix client\""
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/Software-Development-Mastermind/sdmm-flashcards/issues"
   },
-  "homepage": "https://github.com/Software-Development-Mastermind/sdmm-flashcards#readme"
+  "homepage": "https://github.com/Software-Development-Mastermind/sdmm-flashcards#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
+  }
 }

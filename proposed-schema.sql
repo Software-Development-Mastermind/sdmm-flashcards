@@ -20,6 +20,8 @@ CREATE TABLE flashcards (
     question varchar NOT NULL,
     answer varchar NOT NULL,
     type varchar NOT NULL, -- thinking multiple choice vs. open-ended
+    owner_id uuid REFERENCES user(id) NULL,
+    created_by_user_id uuid REFERENCES user(id) NOT NULL,
     created_at timestampz NOT NULL DEFAULT NOW(),
     PRIMARY KEY(id);
 );

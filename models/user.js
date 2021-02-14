@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Category_User);
     }
   };
   User.init({
@@ -40,6 +41,9 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User',
   });
+  User.associate = models => {
+    User.hasMany(models.Category_User);
+  }
   User.beforeCreate(user => {
     user.id = uuid();
     user.created_at = Date.now();

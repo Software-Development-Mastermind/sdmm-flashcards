@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Subcategory.belongsTo(models.Category);
       Subcategory.hasMany(models.Flashcard);
+      Subcategory.hasMany(models.Category_User);
     }
   };
   Subcategory.init({
@@ -32,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
   Subcategory.associate = models => {
     Subcategory.belongsTo(models.Category);
     Subcategory.hasMany(models.Flashcard);
+    Subcategory.hasMany(models.Category_User);
   }
   Subcategory.beforeCreate(subcategory => {
     subcategory.id = uuid();

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "Ma105gic",
+    "password": "Password Goes Here",
     "database": "sdmm_flashcards",
     "host": "127.0.0.1",
     "dialect": "postgres"
@@ -9,13 +9,13 @@
   "test": {
     "username": "postgres",
     "password": "Ma105gic",
-    "database": "sdmm_flashcards",
+    "database": "Password Goes Here",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "Ma105gic",
+    "password": "Password Goes Here",
     "database": "sdmm_flashcards",
     "host": "127.0.0.1",
     "dialect": "postgres"

@@ -1,5 +1,4 @@
 const { QueryTypes } = require('sequelize');
-const Sequelize = require('sequelize');
 const sequelize = require('../database');
 
 class UserQueries {

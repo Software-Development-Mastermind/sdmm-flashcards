@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Category.beforeCreate(category => {
     category.id = uuid();
-    category.created_at = Date.now()});
+    category.created_at = Date.now();
+  });
   return Category;
 };

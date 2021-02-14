@@ -4,7 +4,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Subcategory extends Model {
+  class Flashcard extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -12,12 +12,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Subcategory.belongsTo(models.Category);
-      Subcategory.hasMany(models.Flashcard);
+      Flashcard.belongsTo(models.Subcategory);
     }
   };
-  Subcategory.init({
-    name: {
+  Flashcard.init({
+    question: {
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
+    answer: {
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
+    type: {
       allowNull: false,
       type: DataTypes.STRING,
     },
@@ -27,15 +34,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Subcategory',
+    modelName: 'Flashcard',
   });
-  Subcategory.associate = models => {
-    Subcategory.belongsTo(models.Category);
-    Subcategory.hasMany(models.Flashcard);
+  Flashcard.associate = models => {
+    Flashcard.belongsTo(models.Subcategory);
   }
-  Subcategory.beforeCreate(subcategory => {
-    subcategory.id = uuid();
-    subcategory.created_at = Date.now();
-  });
-  return Subcategory;
+  Flashcard.beforeCreate(flashcard => {
+    flashcard.id = uuid();
+    flashcard.created_at = Date.now();
+  })
+  return Flashcard;
 };

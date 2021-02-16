@@ -2,8 +2,11 @@ const express = require('express');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const sequelize = require('./data/database');
+const path = require('path');
 
 const app = express();
+
+app.use('/', express.static(path.join(__dirname, "client", "build")));
 
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));

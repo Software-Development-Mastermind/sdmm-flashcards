@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Category_User.init({
-    create_at: {
+    created_at: {
       allowNull: false,
       type: DataTypes.DATE,
     }

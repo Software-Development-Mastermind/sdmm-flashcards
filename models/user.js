@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       allowNull: false,
       type: DataTypes.STRING},
-    create_at: {
+    created_at: {
       allowNull: false,
       type: DataTypes.DATE,
       defaultValue: Sequelize.NOW

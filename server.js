@@ -6,8 +6,6 @@ const sequelize = require('./data/database');
 const path = require('path');
 const bodyParser = require("body-parser");
 
-require('dotenv').config();
-
 const { HTTPS, PORT } = process.env;
 console.log(HTTPS);
 
@@ -26,7 +24,7 @@ app.use((req, res) => {
 sequelize.sync()
   .then(result => {
     console.log("Connected to Database");
-    if (HTTPS === 'true') {
+    if (HTTPS === 'TRUE') {
       const fs = require('fs');
       const key = fs.readFileSync('./key.pem');
       const cert = fs.readFileSync('./cert.pem');

@@ -2,7 +2,7 @@ const {uuid} = require('uuidv4');
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Flashcards', {
+    await queryInterface.createTable('flashcards', {
       id: {
         allowNull: false,
         autoIncrement: false,
@@ -33,13 +33,13 @@ module.exports = {
       }
     });
     await queryInterface.addColumn(
-      "Flashcards",
+      "flashcards",
       "subcategory_id",
       {
         allowNull: false,
         type: Sequelize.UUID,
         references: {
-          model: "Subcategories",
+          model: "subcategories",
           key: "id",
         },
         onUpdate: "CASCADE",
@@ -47,13 +47,13 @@ module.exports = {
       }
     );
     await queryInterface.addColumn(
-      "Flashcards",
+      "flashcards",
       "owner_id",
       {
         allowNull: true,
         type: Sequelize.UUID,
         references: {
-          model: "Users",
+          model: "users",
           key: "id",
         },
         onUpdate: "CASCADE",
@@ -61,13 +61,13 @@ module.exports = {
       }
     );
     await queryInterface.addColumn(
-      "Flashcards",
+      "flashcards",
       "created_by_user_id",
       {
         allowNull: false,
         type: Sequelize.UUID,
         references: {
-          model: "Users",
+          model: "users",
           key: "id",
         },
         onUpdate: "CASCADE",
@@ -76,6 +76,6 @@ module.exports = {
     );
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Flashcards');
+    await queryInterface.dropTable('flashcards');
   }
 };

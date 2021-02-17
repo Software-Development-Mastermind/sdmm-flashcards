@@ -11,6 +11,15 @@ class UserQueries {
       }
     )
   }
+  static async getUserByEmail(email){
+    return await sequelize.query(
+      "SELECT * FROM users WHERE email = :email",
+      {
+        replacements: {email: email},
+        type: QueryTypes.SELECT
+      }
+    )
+  }
   static async createUser(user){
     return await sequelize.query(
       "INSERT INTO users VALUES(:first_name, :last_name, :email, :password)",

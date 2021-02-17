@@ -2,7 +2,7 @@ const {uuid} = require('uuidv4');
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Subcategories', {
+    await queryInterface.createTable('subcategories', {
       id: {
         allowNull: false,
         autoIncrement: false,
@@ -25,13 +25,13 @@ module.exports = {
       }
     });
     await queryInterface.addColumn(
-      "Subcategories",
+      "subcategories",
       "category_id",
       {
         allowNull: false,
         type: Sequelize.UUID,
         references: {
-          model: "Categories",
+          model: "categories",
           key: "id",
         },
         onUpdate: "CASCADE",
@@ -40,6 +40,6 @@ module.exports = {
     )
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Subcategories');
+    await queryInterface.dropTable('subcategories');
   }
 };

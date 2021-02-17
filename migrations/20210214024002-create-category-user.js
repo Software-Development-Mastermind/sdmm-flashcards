@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Category_Users', {
+    await queryInterface.createTable('category_users', {
       id: {
         allowNull: false,
         autoIncrement: false,
@@ -20,13 +20,13 @@ module.exports = {
       }
     });
     await queryInterface.addColumn(
-      "Category_Users",
+      "category_users",
       "subcategory_id",
       {
         allowNull: false,
         type: Sequelize.UUID,
         references: {
-          model: "Subcategories",
+          model: "subcategories",
           key: "id",
         },
         onUpdate: "CASCADE",
@@ -34,13 +34,13 @@ module.exports = {
       }
     );
     await queryInterface.addColumn(
-      "Category_Users",
+      "category_users",
       "user_id",
       {
         allowNull: false,
         type: Sequelize.UUID,
         references: {
-          model: "Users",
+          model: "users",
           key: "id",
         },
         onUpdate: "CASCADE",
@@ -48,13 +48,13 @@ module.exports = {
       }
     );
     await queryInterface.addColumn(
-      "Category_Users",
+      "category_users",
       "assigned_by_user_id",
       {
         allowNull: false,
         type: Sequelize.UUID,
         references: {
-          model: "Users",
+          model: "users",
           key: "id",
         },
         onUpdate: "CASCADE",
@@ -63,6 +63,6 @@ module.exports = {
     )
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Category_Users');
+    await queryInterface.dropTable('category_users');
   }
 };

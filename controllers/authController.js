@@ -1,11 +1,16 @@
 var jwt = require('jsonwebtoken');
+const UserQueries = require('../data/queries/userQueries');
 const { HTTPS } = process.env;
 
 exports.login = async (request, response) => {
   const { body } = request;
 
+  const user = await UserQueries.getUserByEmail(body.email);
+
+  if (user.length === 0) return response.status(404).send({ errorMessage: 'Username does not exist or password does not match' });
+
   const jwtPayload = {
-    user: {}
+    user: user
   }
 
   const jwtOptions = {

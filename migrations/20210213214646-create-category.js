@@ -2,7 +2,7 @@ const {uuid} = require('uuidv4');
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Categories', {
+    await queryInterface.createTable('categories', {
       id: {
         allowNull: false,
         autoIncrement: false,
@@ -26,6 +26,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Categories');
+    await queryInterface.dropTable('categories');
   }
 };

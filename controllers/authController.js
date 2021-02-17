@@ -22,4 +22,8 @@ exports.login = async (request, response) => {
   response.cookie('sdmm-fc-sid', token, { secure: HTTPS === 'TRUE' });
   
   response.status(201).send(body);
-}
+};
+
+exports.register = async (request, response) => {
+  // TBD
+};

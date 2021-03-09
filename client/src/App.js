@@ -1,21 +1,20 @@
-import CssBaseline from '@material-ui/core/CssBaseline';
-import {
-  BrowserRouter as Router,
-  Route,
-} from "react-router-dom";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Login from 'components/Login/Login';
-import './App.css';
+import Login from "components/Login/Login";
+import "./App.css";
 
 function App() {
-  return (<>
-    <CssBaseline />
-    <Router>
-      <Route exact path="/">
-        <Login />
-      </Route>
-    </Router>
-  </>);
+  return (
+    <>
+      <CssBaseline />
+      <Router>
+        <Route exact path="/">
+          <Login />
+        </Route>
+      </Router>
+    </>
+  );
 }
 
 export default App;

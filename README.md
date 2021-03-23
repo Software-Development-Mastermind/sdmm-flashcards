@@ -1,3 +1,5 @@
+# Flashcard app
+
 # Installation Instructions
 
  1. Run `npm i` in root directory

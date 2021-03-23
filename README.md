@@ -10,3 +10,9 @@
  6. Create a copy of `.env.sample` and rename it `.env`.
  7. Run `npm run dev` to fire off server
  8. Open app at `localhost:3001`
+
+ # How to keep a branch up to date
+  1. Checkout `main`
+  2. `git pull origin main`
+  3. Checkout `your-branch-name`
+  4. `git rebase main`

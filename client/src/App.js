@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Button 
         variant="contained"
-        color="secondary">Click Me</Button>
+        color="secondary">Login</Button>
     </div>
   );
 }

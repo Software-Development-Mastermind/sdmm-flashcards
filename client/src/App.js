@@ -5,7 +5,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Button>Click Me</Button>
+      <Button 
+        variant="contained"
+        color="secondary">Click Me</Button>
     </div>
   );
 }

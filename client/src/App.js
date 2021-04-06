@@ -8,13 +8,14 @@ import Login from 'components/Login/Login';
 import './App.css';
 
 function App() {
-  return (
+  return (<>
+    <CssBaseline />
     <Router>
       <Route exact path="/">
         <Login />
       </Route>
     </Router>
-  );
+  </>);
 }
 
 export default App;

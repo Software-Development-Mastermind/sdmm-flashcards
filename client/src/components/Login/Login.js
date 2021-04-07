@@ -20,15 +20,26 @@ const useStyles = makeStyles(theme => ({
   loginContainer: { 
     height: "80vh",
   }, 
+  itemPaper: { 
+    height: "45%",
+  },
   paper: {
-    width: "352px", 
-    height: "322px",
+    height: "100%",
   }, 
+  loginHeaderContainer: { 
+    height: "20%"
+  },
+  formControls: {
+    height: "80%"
+  },
   appBar: { 
     top: 'auto', 
     bottom: 0,
     height: "56px",
   }, 
+  button: { 
+    marginRight: "4vw"
+  }
   
 }))
 
@@ -39,83 +50,78 @@ export default function Login() {
   return(<>
     <div className={classes.backgroundColor}>
       <Grid 
-          container
-          className={classes.headerContainer}
-          justify="center"
-          alignItems="center"
-        >
-          <Grid 
-            item
-            >
-            <TypoGraphy 
-              variant="h6" component="h1">
-              SDMM FLASH CARDS
-            </TypoGraphy>
-          </Grid>
+        container
+        className={classes.headerContainer}
+        justify="center"
+        alignItems="center">
+        <Grid item>
+          <TypoGraphy variant="h6" component="h1">
+            SDMM FLASH CARDS
+          </TypoGraphy>
         </Grid>
+      </Grid>
+
       <Grid 
         container 
         className={classes.loginContainer}
-        justify="flex-start"
-        direction="column"
-        alignItems="center"
-      >
+        justify="center"
+        alignItems="flex-start">
         
-        <Grid item>
+        <Grid item className={classes.itemPaper} xs={11}>
           <Card className={classes.paper}>
-          <Grid
-            container
-            justify="center">
-              <Grid item>
-                  <TypoGraphy>
-                    Log In
-                  </TypoGraphy>
-              </Grid>
-          </Grid>
-
-          <form>
-            <Grid
-              container
-              justify="center">
-                <Grid 
-                  item
-                  xs={11}>
-                  <TextField 
-                  id="filled-basic" 
-                  label="Email" 
-                  variant="filled" 
-                  size="small"
-                  fullWidth/>
-                </Grid>
+            <Grid 
+              container 
+              justify="center"
+              alignItems="center"
+              className={classes.loginHeaderContainer}>
+              <TypoGraphy align="center">Log In</TypoGraphy>
             </Grid>
-           
+          
+            <form className={classes.formControls}>
+              <Grid 
+                container 
+                direction="column" 
+                justify="space-between"
+                className={classes.formControls}>
 
-            <Grid
-              container
-              justify="center">
-                <Grid 
-                  item
-                  xs={11}>
-                  <TextField 
-                  id="filled-basic" 
-                  label="Password" 
-                  variant="filled" 
-                  size="small"
-                  fullWidth/>
+                <Grid item container justify="center">
+                    <Grid  item xs={11}>
+                      <TextField 
+                        id="filled-basic" 
+                        label="Email" 
+                        variant="filled" 
+                        size="small"
+                        fullWidth/>
+                    </Grid>
                 </Grid>
-            </Grid>
             
-              <Button 
-                variant="contained" 
-                color="primary" 
-                href="#contained-buttons">
-                LOG IN
-              </Button>
+                <Grid item container justify="center">
+                    <Grid item xs={11}>
+                      <TextField 
+                        id="filled-basic" 
+                        label="Password" 
+                        variant="filled" 
+                        size="small"
+                        fullWidth/>
+                    </Grid>
+                </Grid>
 
-          </form>
-          
-         
-          
+                <Grid 
+                  item 
+                  container 
+                  justify="flex-end">
+                    <Grid item>
+                      <Button 
+                        variant="contained" 
+                        color="primary"
+                        className={classes.button}>
+                        LOG IN
+                      </Button>
+                    </Grid>
+                </Grid>
+
+              </Grid>
+            </form>
           </Card>
         </Grid>
       </Grid>

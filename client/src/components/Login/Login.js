@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme => ({
   loginContainer: { 
     height: "80vh",
   }, 
-<<<<<<< HEAD
   itemPaper: { 
     height: "45%",
   },
@@ -33,23 +32,14 @@ const useStyles = makeStyles(theme => ({
   formControls: {
     height: "80%"
   },
-=======
-  paper: {
-    width: "352px", 
-    height: "322px",
-  }, 
->>>>>>> Added Basic style to Login
   appBar: { 
     top: 'auto', 
     bottom: 0,
     height: "56px",
   }, 
-<<<<<<< HEAD
   button: { 
     marginRight: "4vw"
   }
-=======
->>>>>>> Added Basic style to Login
   
 }))
 
@@ -60,7 +50,6 @@ export default function Login() {
   return(<>
     <div className={classes.backgroundColor}>
       <Grid 
-<<<<<<< HEAD
         container
         className={classes.headerContainer}
         justify="center"
@@ -133,85 +122,6 @@ export default function Login() {
 
               </Grid>
             </form>
-=======
-          container
-          className={classes.headerContainer}
-          justify="center"
-          alignItems="center"
-        >
-          <Grid 
-            item
-            >
-            <TypoGraphy 
-              variant="h6" component="h1">
-              SDMM FLASH CARDS
-            </TypoGraphy>
-          </Grid>
-        </Grid>
-      <Grid 
-        container 
-        className={classes.loginContainer}
-        justify="flex-start"
-        direction="column"
-        alignItems="center"
-      >
-        
-        <Grid item>
-          <Card className={classes.paper}>
-          <Grid
-            container
-            justify="center">
-              <Grid item>
-                  <TypoGraphy>
-                    Log In
-                  </TypoGraphy>
-              </Grid>
-          </Grid>
-
-          <form>
-            <Grid
-              container
-              justify="center">
-                <Grid 
-                  item
-                  xs={11}>
-                  <TextField 
-                  id="filled-basic" 
-                  label="Email" 
-                  variant="filled" 
-                  size="small"
-                  fullWidth/>
-                </Grid>
-            </Grid>
-           
-
-            <Grid
-              container
-              justify="center">
-                <Grid 
-                  item
-                  xs={11}>
-                  <TextField 
-                  id="filled-basic" 
-                  label="Password" 
-                  variant="filled" 
-                  size="small"
-                  fullWidth/>
-                </Grid>
-            </Grid>
-            
-              <Button 
-                variant="contained" 
-                color="primary" 
-                href="#contained-buttons">
-                LOG IN
-              </Button>
-
-          </form>
-          
-         
-          
->>>>>>> Added Basic style to Login
           </Card>
         </Grid>
       </Grid>
